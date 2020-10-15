@@ -1,0 +1,88 @@
+﻿
+@{
+    ViewBag.Title = "Login";
+}
+
+<!--================login_part Area =================-->
+<section class="login_part section_padding">
+    <div class="container">
+        <div class="row align-items-center">
+            <div class="col-lg-6 col-md-6">
+                <div class="login_part_text text-center">
+                    <div class="login_part_text_iner">
+                        <h2>Bizi Daha Yakından Tanımak İster Misiniz?</h2>
+                        <p>
+                            Dünya Gezegenini Hep Birlikte Kurtarabiliriz!
+                        </p>
+                        <a href="/Member/Register/Register" class="btn_3">Hesap Oluştur</a>
+                        @* Member ın içindeki RegisterControllerdaki Register actionına gönderdim. *@
+                    </div>
+                </div>
+            </div>
+            <div class="col-lg-6 col-md-6">
+                <div class="login_part_form">
+                    <div class="login_part_form_iner">
+                        <h3>
+                            Tekrar Hoşgeldin ! <br>
+                            Lütfen Giriş Yap
+                        </h3>
+                        @* kullanıcı adı ve şifresini girecek burada.bu işlemi AutService katmanımda yatptıracağım.bu işlemi jquery ile yaptırmadım.sonra burada yaptırmış olduğum işlemi Layouta section olarak ekleyip REnderSection ile göndereceğim. *@
+                        <form class="row contact_form" id="frm">
+                            <div class="col-md-12 form-group p_star">
+                                <label for="username">Kullanıcı Adı</label>
+                                <input type="text" class="form-control" id="name" name="username" value=""
+                                       placeholder="Kullanıcı Adı">                         
+
+                            </div>
+                            <div class="col-md-12 form-group p_star">
+                                <label for="password">Parola</label>
+                                <input type="password" class="form-control" id="password" name="password" value="" placeholder="Parola">
+                            </div>
+                            <div class="col-md-12 form-group">
+                                <div class="creat_account d-flex align-items-center">
+                                    <input type="checkbox" id="f-option" name="selector">
+                                    <label for="f-option">Beni Hatırla</label>
+                                    @* beni hatırla kısmını aktif etmedik. yapmadık. *@
+                                </div>
+                                <button type="submit" value="Giriş Yap" class="btn_3">
+                                    log in
+                                </button>
+                                <a class="lost_pass" href="#">Parolanızı mı unuttunuz ?</a>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+<!--================login_part end =================-->
+@section scripts{
+    <script>
+        $("#frm").submit(function (e) {
+            e.preventDefault();
+            $.ajax({
+                url: "https://localhost:44302/api/Auth/Login",
+                //AutService in url ini verdik.Api olduğu için api yazdık.AuthController daki Login e gideceksin dedik.
+
+                //TODO: url düzeltilecek
+
+                type: "POST",
+                data: $("#frm").serialize(),
+                success: function (response) {
+                    if (response.Success) {
+                        window.location.href = response.RedirectUrl;
+                        // Buradaki Success ve RedirectUrl, AuthService katmanındaki AuthController'da oluşturulan return'lerle gönderilen value'lardır.
+                    }
+                },
+                error: function (err) {
+                    console.log(err);
+                }
+
+            })
+
+
+        })
+    </script>
+}
+
