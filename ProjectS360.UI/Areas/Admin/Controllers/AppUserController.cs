@@ -1,5 +1,6 @@
 ﻿using ProjectS360.MODEL.Entities;
 using ProjectS360.SERVICE.Option;
+using ProjectS360.UI.Areas.Admin.Data;
 using ProjectS360.UI.Helpers;
 using System;
 using System.Collections.Generic;
@@ -16,6 +17,8 @@ namespace ProjectS360.UI.Areas.Admin.Controllers
 
         AppUserService _appUserService;
         CompanyService _companyService;
+      
+
         #endregion
 
         #region Constructor
@@ -23,6 +26,7 @@ namespace ProjectS360.UI.Areas.Admin.Controllers
         {
             _appUserService = new AppUserService();
             _companyService = new CompanyService();
+        
         }
         #endregion
 
@@ -55,11 +59,21 @@ namespace ProjectS360.UI.Areas.Admin.Controllers
             return Redirect("/Admin/AppUser/List");
         }
 
+        //[HttpGet]
+        //public ActionResult Update(int id)
+        //{           
+        //    AppUser model = _appUserService.GetById(id);
+        //    return View(model);
+        //}
         [HttpGet]
         public ActionResult Update(int id)
-        {           
-            AppUser model = _appUserService.GetById(id);
+        {
+            AppUserVM model = new AppUserVM();
+            model.AppUser = _appUserService.GetById(id);
+            model.Companies = _companyService.GetActive();
+
             return View(model);
+
         }
 
         [HttpPost]

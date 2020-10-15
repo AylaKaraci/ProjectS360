@@ -24,8 +24,8 @@
         <table class="table table-bordered">
             <thead class ="thead-light">
                 <tr>
-                    <th scope="col">Şirket Adı</th>
                     <th scope="col">ŞirketID</th>
+                    <th scope="col">Şirket Adı</th>
                     <th scope="col">Şirket Ünvanı</th>
                     <th scope="col">Email</th>
                     <th scope="col">Telefon No</th>
@@ -46,7 +46,7 @@
                             <td>@item.CompanyAddres</td>
 
                             @* itemın yetkisi *@
-                            <td><img src="@item.Logo" style="width:40px; height:40px; display:block;" /></td>
+                            <td><img src="@item.Logo" display:block;" /></td>
                             <td>
                                 <a href="/Admin/Company/Update/@item.ID">Güncelle</a>
                                 /

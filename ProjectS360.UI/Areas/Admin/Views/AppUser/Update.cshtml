@@ -1,0 +1,87 @@
+﻿@model ProjectS360.UI.Areas.Admin.Data.AppUserVM
+@*@model ProjectS360.MODEL.Entities.AppUser*@
+
+@{
+    ViewBag.Title = "Update";
+    Layout = "~/Areas/Admin/Views/Shared/_SharedAdminLayout.cshtml";
+}
+
+<br />
+<br />
+<br />
+<br />
+<div class="container col-lg-8 col-lg-offset-2">
+    <form action="/Admin/AppUser/Update" method="post" enctype="multipart/form-data">
+        <div class="form-group">
+            <label for="Name">Kullanıcı Adı</label>
+            <input type="text" name="Name" value="@Model.AppUser.Name" class="form-control" />
+        </div>
+        <div class="form-group">
+            <label for="LastName">Kullanıcı Soyadı</label>
+            <input type="text" name="LastName" value="@Model.AppUser.LastName" class="form-control" />
+        </div>
+        <div class="form-group">
+            <label for="PhoneNumber">Telefon Numarası</label>
+            <input type="text" name="PhoneNumber" value="@Model.AppUser.PhoneNumber" class="form-control" />
+        </div>
+        <div class="form-group">
+            <label for="Address">Adres</label>
+            <input type="text" name="Address" value="@Model.AppUser.Address" class="form-control" />
+        </div>
+        <div class="form-group">
+            <label for="Email">Email</label>
+            <input type="text" name="Email" value="@Model.AppUser.Email" class="form-control" />
+        </div>
+        <div class="form-group">
+            <label for="TitleName">Görevi</label>
+            <input type="text" name="TitleName" value="@Model.AppUser.TitleName" class="form-control" />
+        </div>
+        <div class="form-group">
+            <label for="BirthDate">Doğum Tarihi</label>
+            <input type="text" name="BirthDate" value="@Model.AppUser.BirthDate" class="form-control" />
+        </div>
+        <div class="form-group">
+            <label for="UserName">Kullanıcı Adı</label>
+            <input type="text" name="UserName" value="@Model.AppUser.UserName" class="form-control" />
+        </div>
+        <div class="form-group">
+            <label for="Password">Parola</label>
+            <input type="password" name="Password" value="@Model.AppUser.Password" class="form-control" />
+        </div>
+
+        <div class="form-group">
+            <label for="Role">Yetki</label>
+            <select name="Role" class="form-control">
+                @foreach (var item in Enum.GetNames(typeof(ProjectS360.MODEL.Entities.Role)))
+                {
+
+                    <option value="@item">@item</option>
+                }
+            </select>
+        </div>
+        <div class="form-group">
+            <label for="CompanyID">Şirket</label>
+            <select name="CompanyID" class="form-control">
+                @foreach (var item in Model.Companies)
+                {
+
+                    <option value="@item.ID">@item.CompanyName</option>
+                }
+            </select>
+        </div>
+
+        <div class="form-group">
+            <label for="Image">Fotoğraf</label>
+            <input type="file" name="Image" value="@Model.AppUser.ImagePath" class="form-control" />
+        </div>
+
+        @*<button class="btn btn-primary" type="submit">Kaydet</button>*@
+        <input style="visibility:hidden;" type="text" name="ID" value="@Model.AppUser.ID" />
+        <input type="submit" name="name" value="Kullanıcı Ekle" class="btn btn-primary form-control" />
+    </form>
+</div>
+<br />
+<br />
+<br />
+<br />
+

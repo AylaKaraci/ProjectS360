@@ -141,6 +141,7 @@
     <Compile Include="Areas\Admin\Controllers\AppUserController.cs" />
     <Compile Include="Areas\Admin\Controllers\CompanyController.cs" />
     <Compile Include="Areas\Admin\Controllers\HomeController.cs" />
+    <Compile Include="Areas\Admin\Data\AppUserVM.cs" />
     <Compile Include="Areas\Member\Controllers\RegisteController.cs" />
     <Compile Include="Areas\Member\MemberAreaRegistration.cs" />
     <Compile Include="Controllers\HomeController.cs" />
@@ -2214,6 +2215,7 @@
     <Content Include="Areas\Admin\Views\Company\Update.cshtml" />
     <Content Include="Areas\Admin\Views\AppUser\List.cshtml" />
     <Content Include="Areas\Admin\Views\AppUser\Add.cshtml" />
+    <Content Include="Areas\Admin\Views\AppUser\Update.cshtml" />
     <None Include="Scripts\jquery-3.4.1.intellisense.js" />
     <Content Include="Scripts\jquery-3.4.1.js" />
     <Content Include="Scripts\jquery-3.4.1.min.js" />
@@ -2243,7 +2245,6 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
-    <Folder Include="Areas\Admin\Data\" />
     <Folder Include="Areas\Member\Data\" />
     <Folder Include="Areas\Member\Views\Registe\" />
     <Folder Include="Areas\Member\Views\Shared\" />
