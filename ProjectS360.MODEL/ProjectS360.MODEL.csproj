@@ -66,12 +66,19 @@
     <Compile Include="Migrations\202010150616386_App.Designer.cs">
       <DependentUpon>202010150616386_App.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\202010151504501_CompanyTableUpdated.cs" />
+    <Compile Include="Migrations\202010151504501_CompanyTableUpdated.Designer.cs">
+      <DependentUpon>202010151504501_CompanyTableUpdated.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
     <EmbeddedResource Include="Migrations\202010150616386_App.resx">
       <DependentUpon>202010150616386_App.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202010151504501_CompanyTableUpdated.resx">
+      <DependentUpon>202010151504501_CompanyTableUpdated.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <ItemGroup>

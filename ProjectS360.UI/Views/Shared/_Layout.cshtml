@@ -5,6 +5,7 @@
     <!-- Required meta tags -->
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
     <title>S360</title>
     @*<link rel="icon" href="~/Content/img/favicon.png">*@
     <!-- Bootstrap CSS -->
@@ -48,11 +49,12 @@
                         <div class="hearer_icon d-flex">
                             @if (string.IsNullOrEmpty(HttpContext.Current.User.Identity.Name))
                             {
-                                <div class="btn btn-group">
-                                    <a href="/Home/Login" class="btn btn-outline-success">Giriş Yap</a>
-                                    <a href="/Member/Register/Register" class="btn btn-outline-secondary">Üye Ol</a>
+                            <div class="btn btn-group">
+                           
+                                <a href="/Home/Login" class="btn btn-dark">Giriş Yap</a>
+                                <a href="/Member/Register/Register" class="btn btn-outline-secondary">Üye Ol</a>
 
-                                </div>
+                            </div>
                             }
                             else
                             {

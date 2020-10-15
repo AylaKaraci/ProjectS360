@@ -1,0 +1,66 @@
+﻿@model IEnumerable<ProjectS360.MODEL.Entities.AppUser>
+@{
+    ViewBag.Title = "List";
+    Layout = "~/Areas/Admin/Views/Shared/_SharedAdminLayout.cshtml";
+}
+
+<div class="page-header">
+    <h3>
+        <small>
+            <i class="ace-icon fa fa-angle-double-right"></i>
+            Kullanıcı Listesi
+        </small>
+    </h3>
+</div>
+<br />
+
+
+<div class="row">
+    <div class="col-xs-12 " style="margin-top:50px;">
+        <table class="table table-bordered">
+            <thead class="thead-light">
+                <tr>
+                    <th scope="col">KullanıcıID</th>
+                    <th scope="col">Ad</th>
+                    <th scope="col">Soyad</th>
+                    <th scope="col">Email</th>
+                    <th scope="col">Telefon No</th>
+                    <th scope="col">Adres</th>
+                    <th scope="col">Görevi</th>
+                    <th scope="col">Doğum Tarihi</th>
+                    <th scope="col">Kullanıcı Adı</th>
+                    <th scope="col">Parola</th>
+                    <th scope="col">Fotoğraf</th>
+                    <th colspan="2">Güncelle / Sil</th>
+                </tr>
+            </thead>
+            <tbody>
+                @foreach (var item in Model)
+                {
+                    <tr>
+                        <td scope="row">@item.ID</td>
+                        <td>@item.Name</td>
+                        <td>@item.LastName</td>
+                        <td>@item.Email</td>
+                        <td>@item.PhoneNumber</td>
+                        <td>@item.Address</td>
+                        <td>@item.TitleName</td>
+                        <td>@item.BirthDate</td>
+                        <td>@item.UserName</td>
+                        <td>@item.Password</td>
+
+                        @* itemın yetkisi *@
+                        <td><img src="@item.ImagePath" style="width:40px; height:40px; display:block;" /></td>
+                        <td>
+                            <a href="/Admin/AppUser/Update/@item.ID">Güncelle</a>
+                            /
+                            <a href="/Admin/AppUser/Delete/@item.ID">Sil</a>
+                        </td>
+                    </tr>
+                }
+            </tbody>
+        </table>
+    </div>
+
+</div>
+

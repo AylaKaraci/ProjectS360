@@ -1,0 +1,44 @@
+﻿@model ProjectS360.MODEL.Entities.Company
+@{
+    ViewBag.Title = "Update";
+    Layout = "~/Areas/Admin/Views/Shared/_SharedAdminLayout.cshtml";
+}
+
+
+<br />
+<br />
+<br />
+<br />
+<div class="container col-lg-8 col-lg-offset-2">
+    <form action="/Admin/Company/Update" method="post" enctype="multipart/form-data">
+        <div class="form-group">
+            <label for="CompanyName">Şirket Adı</label>
+            <input type="text" name="CompanyName" value="@Model.CompanyName" class="form-control" />
+        </div>
+        <div class="form-group">
+            <label for="CompanyFullName">Şirket Unvanı</label>
+            <input type="text" name="CompanyFullName" value="@Model.CompanyFullName" class="form-control" />
+        </div>
+        <div class="form-group">
+            <label for="CompanyEmail">Email</label>
+            <input type="text" name="CompanyEmail" value="@Model.CompanyEmail" class="form-control" />
+        </div>
+        <div class="form-group">
+            <label for="PhoneNumber">Telefon No</label>
+            <input type="text" name="PhoneNumber" value="@Model.PhoneNumber" class="form-control" />
+        </div>
+        <div class="form-group">
+            <label for="CompanyAddres">Adres</label>
+            <input type="text" name="CompanyAddres" value="@Model.CompanyAddres" class="form-control" />
+        </div>
+
+        <div class="form-group">
+            <label for="Logo">Logo</label>
+            <input type="file" name="Logo" value="@Model.Logo" class="form-control" />
+        </div>
+
+        <input style="visibility:hidden;" type="text" name="ID" value="@Model.ID" />
+        <input type="submit" name="name" value="Şirket Güncelle" class="btn btn-primary form-control" />
+    </form>
+</div>
+

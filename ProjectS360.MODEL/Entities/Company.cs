@@ -10,7 +10,7 @@ namespace ProjectS360.MODEL.Entities
     public class Company : CoreEntity
     {
         public string Logo { get; set; }
-        public string LogoPath { get; set; }
+        public string PhoneNumber { get; set; }
         public string CompanyName { get; set; }
         public string CompanyFullName { get; set; }
         public string CompanyEmail { get; set; }

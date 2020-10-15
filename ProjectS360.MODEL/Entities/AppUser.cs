@@ -29,6 +29,7 @@ namespace ProjectS360.MODEL.Entities
         public string TitleName { get; set; }
         public Role? Role { get; set; }
         public DateTime? BirthDate { get; set; }
+
         public int CompanyID { get; set; }
 
         // Kullanıcının Şirket ile ilişkisi.Bir kullanıcı bir şirkete ait.

@@ -44,7 +44,7 @@ namespace ProjectS360.MODEL.Migrations
                 CompanyFullName = "S360 A.Þ.",
                 CompanyEmail = "info@s360.com.tr",
                 CompanyAddres = "Yeþilce Mah. Yunus Emre Cad. Nil Ticaret Merkezi No:8 Kat:1 34418 4.Levent, Ýstanbul",
-                CreatedDate = DateTime.Now,
+                PhoneNumber= "+90 212 351 91 76 ",
                 MasterID = null,
                 CreatedComputerName = Environment.MachineName,
                 CreatedIP = "123",

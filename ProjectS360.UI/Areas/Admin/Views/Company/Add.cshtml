@@ -1,0 +1,48 @@
+﻿@model List<ProjectS360.MODEL.Entities.Company>
+@{
+    ViewBag.Title = "Add";
+    Layout = "~/Areas/Admin/Views/Shared/_SharedAdminLayout.cshtml";
+}
+
+<br />
+<br />
+<br />
+<br />
+<div class="container col-lg-8 col-lg-offset-2">
+    <form action="/Admin/Company/Add" method="post" enctype="multipart/form-data">
+        <div class="form-group">
+            <label for="CompanyName">Şirket Adı</label>
+            <input type="text" name="CompanyName" value="" class="form-control" />
+        </div>
+        <div class="form-group">
+            <label for="CompanyFullName">Şirket Unvanı</label>
+            <input type="text" name="CompanyFullName" value="" class="form-control" />
+        </div>
+        <div class="form-group">
+            <label for="CompanyEmail">Email</label>
+            <input type="text" name="CompanyEmail" value="" class="form-control" />
+        </div>
+        <div class="form-group">
+            <label for="PhoneNumber">Telefon No</label>
+            <input type="text" name="PhoneNumber" value="" class="form-control" />
+        </div>
+        <div class="form-group">
+            <label for="CompanyAddres">Adres</label>
+            <input type="text" name="CompanyAddres" value="" class="form-control" />
+        </div>
+        @* Fotoğraf Yükleme *@
+        <div class="form-group">
+            <label for="Logo">Logo</label>
+            <input type="file" name="Logo" value="" class="form-control" />
+        </div>
+
+        @* Kaydol Butonu *@
+        <input type="submit" name="name" value="Şirket Ekle" class="btn btn-primary form-control" />
+    </form>
+</div>
+<br />
+<br />
+<br />
+<br />
+
+
