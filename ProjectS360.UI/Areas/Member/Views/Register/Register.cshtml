@@ -11,11 +11,11 @@
 <div class="container col-lg-8 col-lg-offset-2">
     <form action="/Member/Register/Register" method="post" enctype="multipart/form-data">
         <div class="form-group">
-            <label for="Name">Kullanıcı Adı</label>
+            <label for="Name">Ad</label>
             <input type="text" name="Name" value="" class="form-control" />
         </div>
         <div class="form-group">
-            <label for="LastName">Kullanıcı Soyadı</label>
+            <label for="LastName">Soyad</label>
             <input type="text" name="LastName" value="" class="form-control" />
         </div>
         <div class="form-group">
@@ -29,6 +29,16 @@
                 {
                     <option value="@item.ID">@item.CompanyName</option>
 
+                }
+            </select>
+        </div>
+        <div class="form-group">
+            <label for="Role">Yetki</label>
+            <select name="Role" class="form-control">
+                @foreach (var item in Enum.GetNames(typeof(ProjectS360.MODEL.Entities.Role)))
+                {
+
+                    <option value="@item">@item</option>
                 }
             </select>
         </div>

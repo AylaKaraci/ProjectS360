@@ -11,48 +11,50 @@ namespace ProjectS360.UI.Controllers
 {
     public class HomeController : Controller
     {
+        #region Services
+
         AppUserService _appUserService;
-        public ActionResult Index()
-        {
-            return View();
-        }
+
+        #endregion
+
+        #region Constructor
         public HomeController()
         {
             _appUserService = new AppUserService();
         }
+        #endregion
 
-        //public ActionResult Index(int? id)//Guid? id AutService katman işlemleri bittikten sonra buraya ekledik. bu if bloğunuda  de aynı şekilde
-        //{
-        //    if (id != null)
-        //    {
-        //        AppUser user = new AppUser();
-        //        user = _appUserService.GetById((int)id);
-        //        string cookie = user.UserName.ToString();
-        //        FormsAuthentication.SetAuthCookie(cookie, true); // kullanıcının id si ile geri dönecek Indexe ve cookie oluşturacak. kullanıcı id yoksa cookie oluşturmayacak normal indexe geri dönecek.Cookie oluştur. İkinci parametre olarak da kalıcı olup olmadığını belirt.
+        #region Methods
+        public ActionResult Index(int? id)
+        {
+            if (id != null)
+            {
+                AppUser user = new AppUser();
+                user = _appUserService.GetById((int)id);
+                string cookie = user.UserName.ToString();
+                FormsAuthentication.SetAuthCookie(cookie, true);
 
-        //        if (user.Role == Role.Admin)
-        //        {
-        //            //Kullanıcı rolü Admin ise Admin sayfasına yönlendir.
-        //            return Redirect("~/Admin/Home/Index");
-        //        }
-        //    }
+                if (user.Role == Role.Admin)
+                {
 
-        //    var model = _productService.GetDefault(x => x.UnitsInStock > 0 && x.Status == CORE.Entity.Enum.Status.Active).OrderByDescending(x => x.CreatedDate).Take(16).ToList(); //stokta olanları ve aktif olanları çekiyoruz
-        //    return View(model);
-        //}
+                    return Redirect("~/Admin/Home/Index");
+                }
+            }
 
-
+            return View();
+        }
 
         public ActionResult Login()
-        {         
+        {
             return View();
         }
 
         public RedirectResult Logout()
         {
-            FormsAuthentication.SignOut(); //Çıkış yap
-            //bunu AutService katman işlemleri bittikten sonra buraya ekledik.
+            FormsAuthentication.SignOut();
+
             return Redirect("~/Home/Index");
-        }
+        } 
+        #endregion
     }
 }

@@ -9,11 +9,14 @@ namespace ProjectS360.MODEL.Migrations
 
     internal sealed class Configuration : DbMigrationsConfiguration<ProjectS360.MODEL.Context.ProjectContext>
     {
+        #region Constructor
         public Configuration()
         {
             AutomaticMigrationsEnabled = true;
-        }
+        } 
+        #endregion
 
+        #region SeedMethod
         protected override void Seed(ProjectS360.MODEL.Context.ProjectContext context)
         {
             //  This method will be called after migrating to the latest version.
@@ -44,7 +47,7 @@ namespace ProjectS360.MODEL.Migrations
                 CompanyFullName = "S360 A.Þ.",
                 CompanyEmail = "info@s360.com.tr",
                 CompanyAddres = "Yeþilce Mah. Yunus Emre Cad. Nil Ticaret Merkezi No:8 Kat:1 34418 4.Levent, Ýstanbul",
-                PhoneNumber= "+90 212 351 91 76 ",
+                PhoneNumber = "+90 212 351 91 76 ",
                 MasterID = null,
                 CreatedComputerName = Environment.MachineName,
                 CreatedIP = "123",
@@ -55,6 +58,7 @@ namespace ProjectS360.MODEL.Migrations
             context.Users.AddOrUpdate(user);
             context.Companies.AddOrUpdate(company);
 
-        }
+        } 
+        #endregion
     }
 }

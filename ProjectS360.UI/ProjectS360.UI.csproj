@@ -144,6 +144,7 @@
     <Compile Include="Areas\Admin\Data\AppUserVM.cs" />
     <Compile Include="Areas\Member\Controllers\RegisterController.cs" />
     <Compile Include="Areas\Member\MemberAreaRegistration.cs" />
+    <Compile Include="Attributes\CustomAuthorize.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
@@ -2215,7 +2216,6 @@
     <Folder Include="App_Data\" />
     <Folder Include="Areas\Member\Data\" />
     <Folder Include="Areas\Member\Views\Shared\" />
-    <Folder Include="Attributes\" />
     <Folder Include="Models\" />
     <Folder Include="NewFolder1\" />
     <Folder Include="Uploads\" />

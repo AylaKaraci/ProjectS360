@@ -10,6 +10,7 @@ namespace ProjectS360.MODEL.Mapping
 {
     public class AppUserMap : CoreMap<AppUser>
     {
+        #region Constructor
         public AppUserMap()
         {
             ToTable("Users");
@@ -24,6 +25,7 @@ namespace ProjectS360.MODEL.Mapping
             Property(x => x.ImagePath).IsOptional();
             Property(x => x.PhoneNumber).IsOptional();
             Property(x => x.Role).IsOptional();
-        }
+        } 
+        #endregion
     }
 }

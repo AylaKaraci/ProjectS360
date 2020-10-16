@@ -1,5 +1,6 @@
 ﻿using ProjectS360.MODEL.Entities;
 using ProjectS360.SERVICE.Option;
+using ProjectS360.UI.Attributes;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -8,7 +9,7 @@ using System.Web.Mvc;
 
 namespace ProjectS360.UI.Areas.Admin.Controllers
 {
-    
+    //[CustomAuthorize(Role.Admin)]
     public class HomeController : Controller
     {
         // GET: Admin/Home

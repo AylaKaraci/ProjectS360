@@ -11,6 +11,7 @@ namespace ProjectS360.CORE.Mapping
 {
     public class CoreMap<T> : EntityTypeConfiguration<T> where T : CoreEntity
     {
+        #region Constructor
         public CoreMap()
         {
             Property(x => x.ID).HasColumnName("ID")
@@ -26,6 +27,7 @@ namespace ProjectS360.CORE.Mapping
             Property(x => x.ModifiedBy).HasColumnName("ModifiedBy").IsOptional();
             Property(x => x.ModifiedComputerName).HasColumnName("ModifiedComputerName").IsOptional();
             Property(x => x.ModifiedIP).HasColumnName("ModifiedIP").IsOptional();
-        }
+        } 
+        #endregion
     }
 }

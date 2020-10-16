@@ -10,6 +10,7 @@ namespace ProjectS360.CORE.Service
 {
     public interface ICoreService<T> where T : CoreEntity
     {
+        #region Methods
         void Add(T item);
         void Add(List<T> items);
         void Update(T item);
@@ -22,6 +23,7 @@ namespace ProjectS360.CORE.Service
         List<T> GetDefault(Expression<Func<T, bool>> exp);
         List<T> GetAll();
         bool Any(Expression<Func<T, bool>> exp);
-        int Save();
+        int Save(); 
+        #endregion
     }
 }

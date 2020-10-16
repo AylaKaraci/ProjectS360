@@ -7,6 +7,7 @@ using System.Threading.Tasks;
 
 namespace ProjectS360.MODEL.Entities
 {
+    #region enumRole
     [Serializable]
     [Flags]
     public enum Role
@@ -15,7 +16,10 @@ namespace ProjectS360.MODEL.Entities
         Member = 1,
         Admin = 3
         //bu role'lere göre authentication işlemleri yapılacak.
-    }
+    } 
+    #endregion
+
+    #region Properties
     public class AppUser : CoreEntity
     {
         public string Name { get; set; }
@@ -35,5 +39,6 @@ namespace ProjectS360.MODEL.Entities
         // Kullanıcının Şirket ile ilişkisi.Bir kullanıcı bir şirkete ait.
         public virtual Company Company { get; set; }
 
-    }
+    } 
+    #endregion
 }

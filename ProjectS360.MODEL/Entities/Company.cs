@@ -7,6 +7,7 @@ using System.Threading.Tasks;
 
 namespace ProjectS360.MODEL.Entities
 {
+    #region Properties
     public class Company : CoreEntity
     {
         public string Logo { get; set; }
@@ -18,5 +19,6 @@ namespace ProjectS360.MODEL.Entities
         public virtual List<AppUser> AppUsers { get; set; }
 
         //bir şirketin birden fazla kullanıcısı olur.
-    }
+    } 
+    #endregion
 }

@@ -11,6 +11,7 @@ namespace ProjectS360.CORE.Entity
     public class CoreEntity : IEntity<int>
     {
 
+        #region Constructor
         public CoreEntity()
         {
             this.Status = Status.Active;
@@ -19,6 +20,9 @@ namespace ProjectS360.CORE.Entity
             this.CreatedIP = "123";
             this.CreatedBy = 1;
         }
+        #endregion
+
+        #region Properties
         public int ID { get; set; }
         public int? MasterID { get; set; }
         public Status Status { get; set; }
@@ -33,7 +37,8 @@ namespace ProjectS360.CORE.Entity
         public string ModifiedComputerName { get; set; }
         public string ModifiedIP { get; set; }
         public string ModifiedADUserName { get; set; }
-        public int? ModifiedBy { get; set; }
+        public int? ModifiedBy { get; set; } 
+        #endregion
 
     }
 }

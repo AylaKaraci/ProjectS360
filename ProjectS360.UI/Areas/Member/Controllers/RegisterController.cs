@@ -26,6 +26,8 @@ namespace ProjectS360.UI.Areas.Member.Controllers
 
         #endregion
 
+        #region Methods
+
         [HttpGet]
         public ActionResult Register()
         {
@@ -47,6 +49,7 @@ namespace ProjectS360.UI.Areas.Member.Controllers
             _appUserService.Add(data);
 
             return View();
-        }
+        } 
+        #endregion
     }
 }

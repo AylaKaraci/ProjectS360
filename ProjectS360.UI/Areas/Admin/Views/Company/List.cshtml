@@ -24,13 +24,13 @@
         <table class="table table-bordered">
             <thead class ="thead-light">
                 <tr>
-                    <th scope="col">ŞirketID</th>
-                    <th scope="col">Şirket Adı</th>
-                    <th scope="col">Şirket Ünvanı</th>
-                    <th scope="col">Email</th>
-                    <th scope="col">Telefon No</th>
-                    <th scope="col">Adres</th>
-                    <th scope="col">Logo</th>
+                    <th>ŞirketID</th>
+                    <th>Şirket Adı</th>
+                    <th>Şirket Ünvanı</th>
+                    <th>Email</th>
+                    <th>Telefon No</th>
+                    <th>Adres</th>
+                    <th>Logo</th>
                     <th colspan="2">Güncelle / Sil</th>
                 </tr>
                 </thead>
@@ -38,7 +38,7 @@
                     @foreach (var item in Model)
                     {
                         <tr>
-                            <td scope="row">@item.ID</td>
+                            <td>@item.ID</td>
                             <td>@item.CompanyName</td>
                             <td>@item.CompanyFullName</td>
                             <td>@item.CompanyEmail</td>
@@ -46,7 +46,7 @@
                             <td>@item.CompanyAddres</td>
 
                             @* itemın yetkisi *@
-                            <td><img src="@item.Logo" display:block;" /></td>
+                            <td><img src="@item.Logo" style="width:40px; height:40px; display:block;"  /></td>
                             <td>
                                 <a href="/Admin/Company/Update/@item.ID">Güncelle</a>
                                 /

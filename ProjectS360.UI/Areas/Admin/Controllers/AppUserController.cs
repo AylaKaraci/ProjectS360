@@ -1,6 +1,7 @@
 ﻿using ProjectS360.MODEL.Entities;
 using ProjectS360.SERVICE.Option;
 using ProjectS360.UI.Areas.Admin.Data;
+using ProjectS360.UI.Attributes;
 using ProjectS360.UI.Helpers;
 using System;
 using System.Collections.Generic;
@@ -10,6 +11,7 @@ using System.Web.Mvc;
 
 namespace ProjectS360.UI.Areas.Admin.Controllers
 {
+    [CustomAuthorize(Role.Admin)]
     public class AppUserController : Controller
     {
         // GET: Admin/AppUser

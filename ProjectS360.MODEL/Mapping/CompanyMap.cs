@@ -10,6 +10,7 @@ namespace ProjectS360.MODEL.Mapping
 {
     public class CompanyMap : CoreMap<Company>
     {
+        #region Constructor
         public CompanyMap()
         {
             ToTable("Companies");
@@ -22,6 +23,7 @@ namespace ProjectS360.MODEL.Mapping
             HasMany(sub => sub.AppUsers)
               .WithRequired(cat => cat.Company)
               .HasForeignKey(x => x.CompanyID);
-        }
+        } 
+        #endregion
     }
 }

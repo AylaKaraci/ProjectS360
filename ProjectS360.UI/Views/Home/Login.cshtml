@@ -15,7 +15,7 @@
                             Dünya Gezegenini Hep Birlikte Kurtarabiliriz!
                         </p>
                         <a href="/Member/Register/Register" class="btn_3">Hesap Oluştur</a>
-                        @* Member ın içindeki RegisterControllerdaki Register actionına gönderdim. *@
+                        @* Member ın içindeki RegisterControllerdaki Register actionına gider. *@
                     </div>
                 </div>
             </div>
@@ -26,7 +26,6 @@
                             Tekrar Hoşgeldin ! <br>
                             Lütfen Giriş Yap
                         </h3>
-                        @* kullanıcı adı ve şifresini girecek burada.bu işlemi AutService katmanımda yatptıracağım.bu işlemi jquery ile yaptırmadım.sonra burada yaptırmış olduğum işlemi Layouta section olarak ekleyip REnderSection ile göndereceğim. *@
                         <form class="row contact_form" id="frm">
                             <div class="col-md-12 form-group p_star">
                                 <label for="username">Kullanıcı Adı</label>
@@ -42,7 +41,7 @@
                                 <div class="creat_account d-flex align-items-center">
                                     <input type="checkbox" id="f-option" name="selector">
                                     <label for="f-option">Beni Hatırla</label>
-                                    @* beni hatırla kısmını aktif etmedik. yapmadık. *@
+                                    @* beni hatırla kısmını aktif edilmedi *@
                                 </div>
                                 <button type="submit" value="Giriş Yap" class="btn_3">
                                     log in
@@ -62,17 +61,15 @@
         $("#frm").submit(function (e) {
             e.preventDefault();
             $.ajax({
-                url: "https://localhost:44302/api/Auth/Login",
-                //AutService in url ini verdik.Api olduğu için api yazdık.AuthController daki Login e gideceksin dedik.
-
-                //TODO: url düzeltilecek
-
+                url: "https://localhost:44396/api/Auth/Login",
+                //AutService in url i
+           
                 type: "POST",
                 data: $("#frm").serialize(),
                 success: function (response) {
                     if (response.Success) {
                         window.location.href = response.RedirectUrl;
-                        // Buradaki Success ve RedirectUrl, AuthService katmanındaki AuthController'da oluşturulan return'lerle gönderilen value'lardır.
+                      
                     }
                 },
                 error: function (err) {

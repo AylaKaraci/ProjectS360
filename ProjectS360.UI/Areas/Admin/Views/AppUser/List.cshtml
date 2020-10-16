@@ -20,17 +20,17 @@
         <table class="table table-bordered">
             <thead class="thead-light">
                 <tr>
-                    <th scope="col">KullanıcıID</th>
-                    <th scope="col">Ad</th>
-                    <th scope="col">Soyad</th>
-                    <th scope="col">Email</th>
-                    <th scope="col">Telefon No</th>
-                    <th scope="col">Adres</th>
-                    <th scope="col">Görevi</th>
-                    <th scope="col">Doğum Tarihi</th>
-                    <th scope="col">Kullanıcı Adı</th>
-                    <th scope="col">Parola</th>
-                    <th scope="col">Fotoğraf</th>
+                    <th>KullanıcıID</th>
+                    <th>Ad</th>
+                    <th>Soyad</th>                   
+                    <th>Email</th>
+                    <th>Telefon No</th>
+                    <th>Adres</th>
+                    <th>Görevi</th>
+                    <th>Doğum Tarihi</th>
+                    <th>Kullanıcı Adı</th>
+                    <th>Parola</th>
+                    <th>Fotoğraf</th>
                     <th colspan="2">Güncelle / Sil</th>
                 </tr>
             </thead>
@@ -38,7 +38,7 @@
                 @foreach (var item in Model)
                 {
                     <tr>
-                        <td scope="row">@item.ID</td>
+                        <td>@item.ID</td>
                         <td>@item.Name</td>
                         <td>@item.LastName</td>
                         <td>@item.Email</td>

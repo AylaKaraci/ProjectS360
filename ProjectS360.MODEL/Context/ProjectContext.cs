@@ -13,11 +13,14 @@ namespace ProjectS360.MODEL.Context
 {
     public class ProjectContext : DbContext
     {
+        #region Constructor
         public ProjectContext() : base("Name=ProjectContext")
         {
 
         }
+        #endregion
 
+        #region OnModelCreating
         protected override void OnModelCreating(DbModelBuilder modelBuilder)
         {
             // Hazırladığımız map sınıflarındaki konfügirasyonları da dahil ediyoruz.
@@ -26,10 +29,14 @@ namespace ProjectS360.MODEL.Context
 
             base.OnModelCreating(modelBuilder);
         }
+        #endregion
 
+        #region Entities
         public DbSet<AppUser> Users { get; set; }
         public DbSet<Company> Companies { get; set; }
+        #endregion
 
+        #region SaveChangesMethod
         public override int SaveChanges()
         {
             var modifiedEntries = ChangeTracker.Entries().Where(x => x.State == EntityState.Modified || x.State == EntityState.Added).ToList();
@@ -66,6 +73,7 @@ namespace ProjectS360.MODEL.Context
                 }
             }
             return base.SaveChanges();
-        }
+        } 
+        #endregion
     }
 }

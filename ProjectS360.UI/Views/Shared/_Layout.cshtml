@@ -25,7 +25,7 @@
     <link rel="stylesheet" href="~/Content/css/slick.css">
     <!-- style CSS -->
     <link rel="stylesheet" href="~/Content/css/style.css">
-    @RenderSection("scripts1", false)
+   
 </head>
 <body>
     <header class="main_menu home_menu">
@@ -49,8 +49,7 @@
                         <div class="hearer_icon d-flex">
                             @if (string.IsNullOrEmpty(HttpContext.Current.User.Identity.Name))
                             {
-                            <div class="btn btn-group">
-                           
+                            <div class="btn btn-group">                          
                                 <a href="/Home/Login" class="btn btn-dark">Giriş Yap</a>
                                 <a href="/Member/Register/Register" class="btn btn-outline-secondary">Üye Ol</a>
 
@@ -62,7 +61,7 @@
                                     <label>Merhaba @HttpContext.Current.User.Identity.Name</label>
                                     <a href="/Home/Logout" class="btn btn-outline-danger">Çıkış Yap</a>
                                 </div>
-                                <a href="/Member/Cart/Index"><i class="ti-bag"></i></a>
+                               
                             }
                         </div>
                     </nav>
