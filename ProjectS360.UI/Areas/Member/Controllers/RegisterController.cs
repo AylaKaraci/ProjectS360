@@ -12,17 +12,25 @@ namespace ProjectS360.UI.Areas.Member.Controllers
     public class RegisterController : Controller
     {
         // GET: Member/Register
+        #region Services
         AppUserService _appUserService;
+        CompanyService _companyService;
+        #endregion
+
+        #region Constructor
         public RegisterController()
         {
             _appUserService = new AppUserService();
+            _companyService = new CompanyService();
         }
+
+        #endregion
 
         [HttpGet]
         public ActionResult Register()
         {
-            // Kayıt formunu döndü
-            return View();
+            List<Company> companies = _companyService.GetActive().ToList();
+            return View(companies);
         }
 
         [HttpPost]

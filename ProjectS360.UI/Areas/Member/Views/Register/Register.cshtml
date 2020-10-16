@@ -1,24 +1,36 @@
-﻿
+﻿@model List<ProjectS360.MODEL.Entities.Company>
 @{
     ViewBag.Title = "Register";
+    Layout = "~/Views/Shared/_Layout.cshtml";
 }
 
+<br />
+<br />
+<br />
+<br />
+<div class="container col-lg-8 col-lg-offset-2">
     <form action="/Member/Register/Register" method="post" enctype="multipart/form-data">
         <div class="form-group">
-            <label for="Name">Adınız</label>
+            <label for="Name">Kullanıcı Adı</label>
             <input type="text" name="Name" value="" class="form-control" />
         </div>
         <div class="form-group">
-            <label for="LastName">Soyadınız</label>
+            <label for="LastName">Kullanıcı Soyadı</label>
             <input type="text" name="LastName" value="" class="form-control" />
         </div>
         <div class="form-group">
-            <label for="UserName">Kullanıcı Adı</label>
-            <input type="text" name="UserName" value="" class="form-control" />
+            <label for="PhoneNumber">Telefon Numarası</label>
+            <input type="text" name="PhoneNumber" value="" class="form-control" />
         </div>
         <div class="form-group">
-            <label for="Password">Parola</label>
-            <input type="password" name="Password" value="" class="form-control" />
+            <label for="CompanyID">Şirket</label>
+            <select name="CompanyID" class="form-control">
+                @foreach (var item in Model)
+                {
+                    <option value="@item.ID">@item.CompanyName</option>
+
+                }
+            </select>
         </div>
         <div class="form-group">
             <label for="Address">Adres</label>
@@ -29,18 +41,32 @@
             <input type="text" name="Email" value="" class="form-control" />
         </div>
         <div class="form-group">
-            <label for="PhoneNumber">Telefon Numarası</label>
-            <input type="text" name="PhoneNumber" value="" class="form-control" />
+            <label for="TitleName">Görevi</label>
+            <input type="text" name="TitleName" value="" class="form-control" />
+        </div>
+        <div class="form-group">
+            <label for="BirthDate">Doğum Tarihi</label>
+            <input type="text" name="BirthDate" value="" class="form-control" />
+        </div>
+        <div class="form-group">
+            <label for="UserName">Kullanıcı Adı</label>
+            <input type="text" name="UserName" value="" class="form-control" />
+        </div>
+        <div class="form-group">
+            <label for="Password">Parola</label>
+            <input type="password" name="Password" value="" class="form-control" />
         </div>
 
         <div class="form-group">
             <label for="Image">Fotoğraf</label>
             <input type="file" name="Image" value="" class="form-control" />
         </div>
-        <button class="btn btn-primary" type="submit">Kaydet</button>
-        <br />
-        <br />
-    </form>
-   
 
+        <button class="btn btn-primary" type="submit">Kaydet</button>
+    </form>
+</div>
+<br />
+<br />
+<br />
+<br />
 

@@ -39,14 +39,13 @@
                     <a class="nav-link" data-widget="pushmenu" href="#" role="button"><i class="fas fa-bars"></i></a>
                 </li>
                 <li class="nav-item d-none d-sm-inline-block">
-                    <a href="~/Home/Index" class="nav-link">Site Anasayfası</a>
-                    @* siteanasayfası en üste bir çıkacak. *@
+                    <a href="~/Home/Index" class="nav-link">Site Anasayfası</a>                 
                 </li>
             </ul>
         </nav>
         <!-- /.navbar -->
         <!-- Main Sidebar Container -->
-        <aside class="main-sidebar sidebar-dark-primary elevation-4">
+        <aside class="main-sidebar sidebar-dark-primary elevation-4"  style="margin-right:50px;">
             <!-- Brand Logo -->
             <a href="index3.html" class="brand-link">
                 <img src="~/Areas/Admin/Content/dist/img/AdminLTELogo.png" alt="AdminLTE Logo" class="brand-image img-circle elevation-3"
@@ -59,7 +58,7 @@
                 <!-- Sidebar user panel (optional) -->
                 <div class="user-panel mt-3 pb-3 mb-3 d-flex">
                     <div class="image">
-                        <img src="~/Areas/Admin/Content/dist/img/user2-160x160.jpg" class="img-circle elevation-2" alt="User Image">
+                        <img src="~/Areas/Admin/Content/dist/img/user4-128x128.jpg" class="img-circle elevation-2" alt="User Image">
                     </div>
                     <div class="info">
                         <a href="#" class="d-block">@HttpContext.Current.User.Identity.Name</a>
@@ -135,8 +134,7 @@
             <!-- /.sidebar -->
         </aside>
 
-        <div class="container">
-           
+        <div class="container">          
             @RenderBody()
         </div>
 
