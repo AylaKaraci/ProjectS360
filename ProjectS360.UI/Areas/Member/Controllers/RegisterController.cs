@@ -33,6 +33,7 @@ namespace ProjectS360.UI.Areas.Member.Controllers
         {
             List<Company> companies = _companyService.GetActive().ToList();
             return View(companies);
+           
         }
 
         [HttpPost]
