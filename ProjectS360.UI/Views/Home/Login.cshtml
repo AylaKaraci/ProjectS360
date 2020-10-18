@@ -1,4 +1,4 @@
-﻿
+﻿@*@model ProjectS360.UI.Models.VM.LoginVM*@
 @{
     ViewBag.Title = "Login";
 }
@@ -30,23 +30,23 @@
                             <div class="col-md-12 form-group p_star">
                                 <label for="username">Kullanıcı Adı</label>
                                 <input type="text" class="form-control" id="name" name="username" value=""
-                                       placeholder="Kullanıcı Adı">                         
+                                       placeholder="Kullanıcı Adı">   
 
-                            </div>
+                                </div>
                             <div class="col-md-12 form-group p_star">
                                 <label for="password">Parola</label>
                                 <input type="password" class="form-control" id="password" name="password" value="" placeholder="Parola">
                             </div>
                             <div class="col-md-12 form-group">
                                 <div class="creat_account d-flex align-items-center">
-                                    <input type="checkbox" id="f-option" name="selector">
-                                    <label for="f-option">Beni Hatırla</label>
+                                    @*<input type="checkbox" id="f-option" name="selector">
+                                    <label for="f-option">Beni Hatırla</label>*@
                                     @* beni hatırla kısmını aktif edilmedi *@
                                 </div>
                                 <button type="submit" value="Giriş Yap" class="btn_3">
                                     log in
                                 </button>
-                                <a class="lost_pass" href="#">Parolanızı mı unuttunuz ?</a>
+                                @*<a class="lost_pass" href="#">Parolanızı mı unuttunuz ?</a>*@
                             </div>
                         </form>
                     </div>

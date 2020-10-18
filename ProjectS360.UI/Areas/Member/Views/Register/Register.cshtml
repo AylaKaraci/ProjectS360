@@ -1,5 +1,7 @@
 ﻿@model List<ProjectS360.MODEL.Entities.Company>
 
+@*@model ProjectS360.UI.Areas.Member.Data.AppUserVM*@
+
 @{
     ViewBag.Title = "Register";
     Layout = "~/Views/Shared/_Layout.cshtml";
@@ -35,31 +37,31 @@
         </div>
 
         @*<div class="form-group">
-            <label for="Role">Yetki</label>
-            <select name="Role" class="form-control">
-                @foreach (var item in Enum.GetNames(typeof(ProjectS360.MODEL.Entities.Role)))
-                {
+                <label for="Role">Yetki</label>
+                <select name="Role" class="form-control">
+                    @foreach (var item in Enum.GetNames(typeof(ProjectS360.MODEL.Entities.Role)))
+                    {
 
-                    <option value="@item">@item</option>
-                }
-            </select>
-        </div>*@
-        @*<div class="form-group">
-            <label for="Address">Adres</label>
-            <input type="text" name="Address" value="" class="form-control" />
-        </div>*@
+                        <option value="@item">@item</option>
+                    }
+                </select>
+            </div>*@
+        <div class="form-group">
+                <label for="Address">Adres</label>
+                <input type="text" name="Address" value="" class="form-control" />
+            </div>
         <div class="form-group">
             <label for="Email">Email</label>
             <input type="text" name="Email" value="" class="form-control" />
         </div>
-        @*<div class="form-group">
-            <label for="TitleName">Görevi</label>
-            <input type="text" name="TitleName" value="" class="form-control" />
-        </div>
         <div class="form-group">
-            <label for="BirthDate">Doğum Tarihi</label>
-            <input type="text" name="BirthDate" value="" class="form-control" />
-        </div>*@
+                <label for="TitleName">Görevi</label>
+                <input type="text" name="TitleName" value="" class="form-control" />
+            </div>
+            <div class="form-group">
+                <label for="BirthDate">Doğum Tarihi</label>
+                <input type="text" name="BirthDate" value="" class="form-control" />
+            </div>
         <div class="form-group">
             <label for="UserName">Kullanıcı Adı</label>
             <input type="text" name="UserName" value="" class="form-control" />
@@ -81,4 +83,3 @@
 <br />
 <br />
 <br />
-

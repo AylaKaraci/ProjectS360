@@ -31,14 +31,12 @@
                         <div class="small-box bg-warning">
                             <div class="inner">
                                 <h3>@ViewBag.User</h3>
-                                @* TODO: Kullanıcı Sayısı Çekilecek *@
-
+                         
                                 <p>Kullanıcı</p>
                             </div>
                             <div class="icon">
                                 <i class="ion ion-person-add"></i>
-                            </div>
-                            @* Kullanıcıları görüntülemek için AppUser diye bir controller oluşturayım ve tüm kullanıcıları görüntülemek için de List diye de bir actionım olsun *@
+                            </div>                   
                             <a href="/Admin/AppUser/List" class="small-box-footer">Kullanıcıları Görüntüle <i class="fas fa-arrow-circle-right"></i></a>
                         </div>
                     </div>
@@ -48,14 +46,14 @@
                         <div class="small-box bg-danger">
                             <div class="inner">
                                 <h3>@ViewBag.Company</h3>
-                                @* TODO: Kategori Sayısı Çekilecek *@
+                               
                                 <p>Şirketler</p>
                             </div>
                             <div class="icon">
                                 <i class="ion ion-pie-graph"></i>
                             </div>
-                            @* Controllerlar düzelticelecek*@
-                            <a href="/Admin/Category/List" class="small-box-footer">Şirketleri Görüntüle <i class="fas fa-arrow-circle-right"></i></a>
+                           
+                            <a href="/Admin/Company/List" class="small-box-footer">Şirketleri Görüntüle <i class="fas fa-arrow-circle-right"></i></a>
                         </div>
                     </div>
                     <!-- ./col -->
