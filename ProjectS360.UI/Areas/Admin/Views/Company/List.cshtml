@@ -12,12 +12,6 @@
         </small>
     </h3>
 </div>
-<br />
-
-
-@*<div class="col-6 text-left text-white">
-    <a class="btn btn-success" href="/Company/Add/">Tip Ekle</a>
-</div>*@
 
 <div class="row">
     <div class="col-xs-12 " style="margin-top:50px;">
@@ -37,22 +31,20 @@
                 <tbody>
                     @foreach (var item in Model)
                     {
-                        <tr>
-                            <td>@item.ID</td>
-                            <td>@item.CompanyName</td>
-                            <td>@item.CompanyFullName</td>
-                            <td>@item.CompanyEmail</td>
-                            <td>@item.PhoneNumber</td>
-                            <td>@item.CompanyAddres</td>
-
-                            @* itemın yetkisi *@
-                            <td><img src="@item.Logo" style="width:40px; height:40px; display:block;"  /></td>
-                            <td>
-                                <a href="/Admin/Company/Update/@item.ID">Güncelle</a>
-                                /
-                                <a href="/Admin/Company/Delete/@item.ID">Sil</a>
-                            </td>
-                        </tr>
+                    <tr>
+                        <td>@item.ID</td>
+                        <td>@item.CompanyName</td>
+                        <td>@item.CompanyFullName</td>
+                        <td>@item.CompanyEmail</td>
+                        <td>@item.PhoneNumber</td>
+                        <td>@item.CompanyAddres</td>
+                        <td><img src="@item.Logo" style="width:40px; height:40px; display:block;" /></td>
+                        <td>
+                            <a href="/Admin/Company/Update/@item.ID">Güncelle</a>
+                            /
+                            <a href="/Admin/Company/Delete/@item.ID">Sil</a>
+                        </td>
+                    </tr>
                     }
                 </tbody>
         </table>

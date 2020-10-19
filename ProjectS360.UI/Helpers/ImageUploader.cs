@@ -8,6 +8,7 @@ namespace ProjectS360.UI.Helpers
 {
     public class ImageUploader
     {
+        #region UploadSingleImage
         public static string UploadSingleImage(string serverPath, HttpPostedFileBase file)
         {
             if (file != null)
@@ -20,7 +21,7 @@ namespace ProjectS360.UI.Helpers
 
                 if (extension == "jpg" || extension == "png" || extension == "jpeg" || extension == "gif")
                 {
-                    if (File.Exists(HttpContext.Current.Server.MapPath(serverPath + fileName))) //  o anki serverın üzerinde benim yukarıda oluştrumuş olduğum, serverpath ve filename i birleştirdiğimizde örneğin Uploads/Kartalkaan.jpg gibi bir şey varsa
+                    if (File.Exists(HttpContext.Current.Server.MapPath(serverPath + fileName))) //  o anki serverın üzerinde benim yukarıda oluştrumuş olduğum, serverpath ve filename i birleştirdiğimizde örneğin Uploads/ayla.jpg gibi bir şey varsa
                     {
                         // Eğer server üzerinde aynı isimde resim varsa.
                         return "1";
@@ -42,6 +43,7 @@ namespace ProjectS360.UI.Helpers
 
             // Dosya boş ise, null ise
             return "0";
-        }
+        } 
+        #endregion
     }
 }

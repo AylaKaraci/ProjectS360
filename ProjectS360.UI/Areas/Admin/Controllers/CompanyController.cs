@@ -42,11 +42,11 @@ namespace ProjectS360.UI.Areas.Admin.Controllers
         [HttpPost]
         public RedirectResult Add(Company data, HttpPostedFileBase image)
         {
-            // Üye Ekleme formunu içindeki bilgilerle gönderir.
+            
             data.Logo = ImageUploader.UploadSingleImage("~/Uploads/", image);
 
             if (data.Logo == "0" || data.Logo == "1" || data.Logo == "2")
-                data.Logo = "~/Content/img/company/logo1.png"; // Image yüklenmezse bu görsel yüklenecek.
+                data.Logo = "~/Content/img/company/google.png"; // Image yüklenmezse bu görsel yüklenecek.
 
             _companyService.Add(data);
 
@@ -69,20 +69,20 @@ namespace ProjectS360.UI.Areas.Admin.Controllers
             {
                 Company updated = _companyService.GetById(data.ID);
 
-                if (updated.Logo == null || updated.Logo == "~/Content/img/company/logo1.png")
-                    data.Logo = "~/Content/img/company/logo1.png"; // Image yüklenmezse bu görsel yüklenecek.
+                if (updated.Logo == null || updated.Logo == "~/Content/img/company/google.png")
+                    data.Logo = "~/Content/img/company/google.png"; // Image yüklenmezse bu görsel yüklenecek.
                 else
                     data.Logo = updated.Logo;
             }
 
             _companyService.Update(data);
 
-            return Redirect("/Admin/Company/List");//Admin deki AppUserControllerımdaki List metoduna(actionına) redirekt olacak.
+            return Redirect("/Admin/Company/List");
         }
 
         public RedirectResult Delete(int id)
         {
-            _companyService.Remove(id);//gelen id yi alacak ve Remove metodu bu id yi silecek.
+            _companyService.Remove(id);
             return Redirect("/Admin/Company/List");
         }
 

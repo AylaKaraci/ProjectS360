@@ -88,8 +88,8 @@ namespace ProjectS360.UI.Areas.Admin.Controllers
             {
                 AppUser updated = _appUserService.GetById(data.ID);
 
-                if (updated.ImagePath == null || updated.ImagePath == "~/Content/img/user/user.png")
-                    data.ImagePath = "~/Content/img/user/user.png"; // Image yüklenmezse bu görsel yüklenecek.
+                if (updated.ImagePath == null || updated.ImagePath == "~/Content/img/author/user.png")
+                    data.ImagePath = "~/Content/img/author/user.png"; // Image yüklenmezse bu görsel yüklenecek.
                 else
                     data.ImagePath = updated.ImagePath;
             }
