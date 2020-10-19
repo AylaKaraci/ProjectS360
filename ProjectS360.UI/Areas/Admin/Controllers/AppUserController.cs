@@ -32,7 +32,6 @@ namespace ProjectS360.UI.Areas.Admin.Controllers
         }
         #endregion
 
-
         #region Actions
         public ActionResult List()
         {

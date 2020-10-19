@@ -14,6 +14,7 @@ namespace ProjectS360.UI.Attributes
         // Roller tutmak için string dizi oluşturuldu.
         private string[] UserProfileRequired { get; set; }
 
+        #region CustomAuthorize
         public CustomAuthorize(params object[] userProfilesRequired)
         {
             if (userProfilesRequired.Any(p => p.GetType().BaseType != typeof(Enum)))
@@ -23,8 +24,10 @@ namespace ProjectS360.UI.Attributes
             }
 
             this.UserProfileRequired = userProfilesRequired.Select(p => Enum.GetName(p.GetType(), p)).ToArray();
-        }
+        } 
+        #endregion
 
+        #region OnAuthorization
         public override void OnAuthorization(AuthorizationContext context)
         {
             bool authorized = false;
@@ -43,7 +46,7 @@ namespace ProjectS360.UI.Attributes
                 }
             }
 
-            if (!authorized) 
+            if (!authorized)
             {
                 var url = new UrlHelper(context.RequestContext);
                 var logonUrl = url.Action("Index", "Home", new { Id = 302, Area = "" });
@@ -51,7 +54,8 @@ namespace ProjectS360.UI.Attributes
 
                 return;
             }
-        }
+        } 
+        #endregion
 
     }
 }
